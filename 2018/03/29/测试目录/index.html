@@ -135,10 +135,10 @@ var _hmt = _hmt || [];
 	<div class="mypage">		
 	  		
 
-	  <a id="more"></a>
-<h1 id="CCNA学习笔记"><a href="#CCNA学习笔记" class="headerlink" title="CCNA学习笔记"></a>CCNA学习笔记</h1><hr>
+	  <h1 id="CCNA学习笔记"><a href="#CCNA学习笔记" class="headerlink" title="CCNA学习笔记"></a>CCNA学习笔记</h1><hr>
 <p>在不放弃分类编址的情况下把大的网络划分成若干个子网,从1985年起IP地址中又增加了一个“子网字段”使两级的IP地址变成了三级IP地址。使多个物理网络可以共用一个网络前缀。这种做法叫做子网划分，已成为正式标准协议。</p>
 <p> 从主机字段借用若干个字段作为子网号，而主机号也就相应减少了若干比特。<br><figure class="highlight fix"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">ip地址</span>=<span class="string"> 网络号，子网号，主机号</span></span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <p> 子网位从主机字段的最左边开始连续借用。<br> 子网掩码：用来划分子网段与主机段。<br> 一般子网号全0或全1不分配，而主机号全为1和全为0是始终不分配的。</p>
 <p> 1993年以后为了最大限度的利用ip地址，internet采用了无分类ip编址方案。即CIDR（无类域间路由）分块方案</p>
 <p> OSI/RM第二层数据链路层通过地理地址进行数据的传送<br>第三层网络层通过IP地址进行数据的传送．<br>物理地址就是MAC地址．<br>IP地址是只在软件中使用的抽象地址. 不论是局域网还是广域网, 发送和接收信息时都依靠的是硬件地址. 所以协议软件发送信息包之前, 必须把IP地址翻译成对应的物理地址, 这个过程称为地址解析(address resolution)</p>
@@ -161,7 +161,7 @@ var _hmt = _hmt || [];
 <li>用于不同网络的互联</li>
 <li>为它所承载的数据做路径的选择—选路</li>
 <li>当数据包进入路由器时，路由器将基于目标ip地址查看本地的路由表；若表中存在记录将无条件按照记录转发，若没有记录将丢弃流量。</li>
-<li><p>默认路由器仅存在直连路由，非直连网段，被称为未知网段。<br>获取未知网段的方法：<br>1.静态路由：管理员手写<br>2.动态路由：所以的路由器间使用算法沟通计算，自动生成。</p>
+<li><p>默认路由器仅存在直连路由，非直连网段，被称为未知网段。<br>获取未知网段的方法：<br> 1.静态路由：管理员手写<br> 2.动态路由：所以的路由器间使用算法沟通计算，自动生成。</p>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查看路由器的路由表</span></span><br><span class="line">show<span class="built_in"> ip </span>route</span><br><span class="line"></span><br><span class="line"><span class="comment">#静态路由写法</span></span><br><span class="line">ip<span class="built_in"> route </span>192.168.3.0 255.255.255.0 192.168.2.2</span><br><span class="line">   前缀            目标网络号          下一跳</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">路由探测</span><br><span class="line">tracert</span><br></pre></td></tr></table></figure>
 </li>
