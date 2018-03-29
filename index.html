@@ -285,7 +285,7 @@ var _hmt = _hmt || [];
 <li><p>安装使用<code>Latex</code> 语法来书写数学公式的插件</p>
 <p><a href="https://blog.csdn.net/u014630987/article/details/78670258" target="_blank" rel="noopener"> 参考博客连接</a></p>
 <p>需要注意的是</p>
-<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">修改</span><br><span class="line">escape: /^<span class="symbol">\\</span>([<span class="symbol">\\</span>`*&#123;&#125;<span class="symbol">\[</span><span class="symbol">\]</span>()#$+<span class="symbol">\-</span>.!_&gt;])/,</span><br><span class="line">为</span><br><span class="line">escape: /^<span class="symbol">\\</span>([`*<span class="symbol">\[</span><span class="symbol">\]</span>()# +<span class="symbol">\-</span>.!_&gt;])/,</span><br><span class="line"></span><br><span class="line">修改</span><br><span class="line">em: /^<span class="symbol">\b</span>_((?:__|[<span class="symbol">\s</span><span class="symbol">\S</span>])+?)_<span class="symbol">\b</span>|^<span class="symbol">\*</span>((?:<span class="symbol">\*</span><span class="symbol">\*</span>|[<span class="symbol">\s</span><span class="symbol">\S</span>])+?)<span class="symbol">\*</span>(?!<span class="symbol">\*</span>)/,</span><br><span class="line">为</span><br><span class="line">em: /^<span class="symbol">\*</span>((?:<span class="symbol">\*</span><span class="symbol">\*</span>|[<span class="symbol">\s</span><span class="symbol">\S</span>])+?)<span class="symbol">\*</span>(?!<span class="symbol">\*</span>)/,</span><br><span class="line"></span><br><span class="line">被修改的文件是</span><br><span class="line">node_modules<span class="symbol">\k</span>ramed<span class="symbol">\l</span>ib<span class="symbol">\r</span>ules<span class="symbol">\i</span>nline.js</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">修改</span><br><span class="line">escape: /^\\([\\`*&#123;&#125;\[\]()#$+\-.!_&gt;])/,</span><br><span class="line">为</span><br><span class="line">escape: /^\\([`*\[\]()# +\-.!_&gt;])/,</span><br><span class="line"></span><br><span class="line">修改</span><br><span class="line">em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br><span class="line">为</span><br><span class="line">em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br><span class="line"></span><br><span class="line">被修改的文件是</span><br><span class="line">node_modules\kramed\lib\rules\inline.js</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <hr>
@@ -304,10 +304,10 @@ var _hmt = _hmt || [];
 </li>
 </ol>
 <h3 id="配置Deployment"><a href="#配置Deployment" class="headerlink" title="配置Deployment"></a>配置Deployment</h3><blockquote>
-<p>在根目录_config.yml文件中，找到Deployment，然后按照如下修改：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">  <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">repo</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:yourname/yourname.github.io.git</span><br><span class="line">  <span class="attribute">branch</span>: master</span><br></pre></td></tr></table></figure></p>
+<p>在根目录_config.yml文件中，找到Deployment，然后按照如下修改：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:yourname/yourname.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <p>比如我的仓库的地址是<code>git@github.com:Macrhard/Macrhard.github.io.git</code>，所以配置如下</p>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">  <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">repo</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:Macrhard/Macrhard.github.io.git</span><br><span class="line">  <span class="attribute">branch</span>: master</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:Macrhard/Macrhard.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
 <h2 id="建立博客及部署"><a href="#建立博客及部署" class="headerlink" title="建立博客及部署"></a>建立博客及部署</h2><ol>
 <li>新建一篇博客，在cmd执行命令：<br><code>hexo new post &quot;标题名&quot;</code><br>这时候在文件夹<code>source\_posts_posts</code>目录下将会看到已经创建的文件。</li>
 <li>使用编辑器编好文章，那么就可以使用命令：<code>hexo d -g</code>，生成以及部署了</li>
@@ -368,9 +368,9 @@ var _hmt = _hmt || [];
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/娱乐/">娱乐<span>1</span></a></li>
-		
 			<li><a href="/tags/Test/">Test<span>1</span></a></li>
+		
+			<li><a href="/tags/娱乐/">娱乐<span>1</span></a></li>
 		
 		 
 		</ul>
