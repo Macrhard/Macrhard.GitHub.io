@@ -138,6 +138,64 @@ var _hmt = _hmt || [];
 <div class="row">
 	<div class="col-md-8">
 		<h3 class="title">
+			<a href="/2018/03/29/测试目录/" >测试目录及标题</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2018-03-29  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<p>[TOC]</p>
+<h1 id="CCNA学习笔记"><a href="#CCNA学习笔记" class="headerlink" title="CCNA学习笔记"></a>CCNA学习笔记</h1><hr>
+<p>在不放弃分类编址的情况下把大的网络划分成若干个子网,从1985年起IP地址中又增加了一个“子网字段”使两级的IP地址变成了三级IP地址。使多个物理网络可以共用一个网络前缀。这种做法叫做子网划分，已成为正式标准协议。</p>
+<p> 从主机字段借用若干个字段作为子网号，而主机号也就相应减少了若干比特。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip地址= 网络号，子网号，主机号</span><br></pre></td></tr></table></figure></p>
+<p> 子网位从主机字段的最左边开始连续借用。<br> 子网掩码：用来划分子网段与主机段。<br> 一般子网号全0或全1不分配，而主机号全为1和全为0是始终不分配的。</p>
+<p> 1993年以后为了最大限度的利用ip地址，internet采用了无分类ip编址方案。即CIDR（无类域间路由）分块方案</p>
+<p> OSI/RM第二层数据链路层通过地理地址进行数据的传送<br>第三层网络层通过IP地址进行数据的传送．<br>物理地址就是MAC地址．<br>IP地址是只在软件中使用的抽象地址. 不论是局域网还是广域网, 发送和接收信息时都依靠的是硬件地址. 所以协议软件发送信息包之前, 必须把IP地址翻译成对应的物理地址, 这个过程称为地址解析(address resolution)</p>
+<p> 默认子网掩码：是分类网络的子网掩码<br> A类网络：255.0.0.0<br> B类网络：255.255.0.0<br> C类网络：255.255.255.0</p>
+<p> 子网地址：网络号和子网号不变，主机号全零，也可以 子网地址 = 主机ip AND 子网掩码。</p>
+<p> 广播地址：一对多进行通讯，主机号为全1</p>
+<p>网络号保留，主机号全0即是该网络的网络地址</p>
+<p>主机号全为一  和全为零是不分配的<br>全0 为网络地址<br>全1 为该网络内的广播地址<br>2811<br>2960<br>2FEW2W</p>
+<p>在此输入正文<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#进入第二级别   查看</span><br><span class="line">enable</span><br><span class="line">#进入第三级别</span><br><span class="line">configure terminal</span><br><span class="line">#进入第四级别 专项配置</span><br><span class="line">interface XXXXXX  </span><br><span class="line"></span><br><span class="line">#路由器以太网0/0端口打开</span><br><span class="line">Router(config)#Interface FastEthernet0/0</span><br><span class="line">Router(config-if)# no shutdown</span><br><span class="line"></span><br><span class="line">#路由器ip配置</span><br><span class="line">Router(config-if)#ip address 192.168.1.100 255.255.255.0</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#查看接口摘要</span><br><span class="line">show ip interface brief </span><br><span class="line">#</span><br></pre></td></tr></table></figure></p>
+<p>网关地址：路由器的ip地址</p>
+<p>电脑自动获取ip<br>DHCP：动态主机配置协议<br>需要一个DHCP服务器，任何一个电子设备都可以担当一个服务器<br>成为DHCP服务器的条件</p>
+<ol>
+<li>该设备必须拥有接口或者网卡连接到所需要的</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#创建名为mypool_1的dhcp池塘</span><br><span class="line">ip dhcp pool mypool_1   </span><br><span class="line"></span><br><span class="line">#关联端口  地址范围</span><br><span class="line">network 192.168.1.0 255.255.255.0 </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#网关地址 </span><br><span class="line">default-router 192.168.1.1 </span><br><span class="line"></span><br><span class="line">#DNS服务器</span><br><span class="line">dns-server 114.114.114.114</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#关闭 DNS服务</span><br><span class="line">Router(config)#no ip domain-lookup</span><br><span class="line">#修改默认主机名为R1</span><br><span class="line">Router(config)#hostname R1</span><br><span class="line"></span><br><span class="line">#编写静态路由</span><br><span class="line">Router(config)#ip route 192.168.3.0 255.255.255.0 192.168.2.1</span><br><span class="line">                            目标路由                下一跳</span><br></pre></td></tr></table></figure>
+<p>同层用交叉线，不同层用直连线</p>
+<p>路由器的作用：</p>
+<ol>
+<li>用于不同网络的互联</li>
+<li>为它所承载的数据做路径的选择—选路</li>
+<li>当数据包进入路由器时，路由器将基于目标ip地址查看本地的路由表；若表中存在记录将无条件按照记录转发，若没有记录将丢弃流量。</li>
+<li><p>默认路由器仅存在直连路由，非直连网段，被称为未知网段。<br>获取未知网段的方法：<br>1.静态路由：管理员手写<br>2.动态路由：所以的路由器间使用算法沟通计算，自动生成。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#查看路由器的路由表</span><br><span class="line">show ip route</span><br><span class="line"></span><br><span class="line">#静态路由写法</span><br><span class="line">ip route 192.168.3.0 255.255.255.0 192.168.2.2</span><br><span class="line">   前缀            目标网络号          下一跳</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">路由探测</span><br><span class="line">tracert</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+	
+	</div>
+  <a type="button" href="/2018/03/29/测试目录/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
 			<a href="/2018/03/29/ceshi/" title="这是一个测试页面">ceshi</a>
 		</h3>
 		</div>
@@ -353,6 +411,10 @@ var _hmt = _hmt || [];
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2018/03/29/测试目录/" ><i class="fa fa-file-o"></i>测试目录及标题</a>
+      </li>
     
       <li>
         <a href="/2018/03/29/ceshi/"  title="这是一个测试页面" ><i class="fa fa-file-o"></i>ceshi</a>
