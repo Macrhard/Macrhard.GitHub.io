@@ -9,6 +9,12 @@
       <content type="html"><![CDATA[<p>农民张大伯去买一斤小米</p><p>米店老板掏出一个秤，放在地上，随手拿起一把刀割破了一个米袋，米就哗哗哗的掉到秤上<br>等到秤的示数为一斤时的瞬间，老板堵住了米袋子的口子，把秤上的小米给了张大伯</p><p>张大伯心满意足的走在回家的路上，心中感慨老板真是个豪爽的人</p><p>突然，他觉得不太对劲：<br>按照<script type="math/tex">F=ma</script>，小米在落在秤盘上时应该会产生一个力……所以他买到的米其实不足一斤</p><p>第二天，张大伯将老板告上了官府。</p><p>张大伯把自己的想法说出来了<br>老板则表示这样做每次都没出过差错</p><p>县太爷听了，微微一笑：“这是误会，老板没有坑你”</p><p>说完，县太爷猛地取一根毛笔，蘸墨写到：</p><p>设秤距离抛出点的竖直高度为h<br>记小米的流速为<script type="math/tex">\lambda =m_{0} kg/s</script><br>则在秤恰好显示1斤时，取此后一极短时间<script type="math/tex">\Delta t</script></p><p>此时间内，与秤盘发生碰撞的小米质量设为<script type="math/tex">m</script><br>则<script type="math/tex">m=\lambda \bullet \Delta t</script><br>由动量定理，得</p><script type="math/tex; mode=display">F\Delta t=mv</script><p>其中<script type="math/tex">v=\sqrt{2gh}</script></p><p>联立得$F=\lambda \sqrt{2gh}$<br>也就是说此时秤的示数$N=F+m_{1}g$ （$m_1$为已经落在盘上小米的质量）</p><p>张大伯一听，愤怒的说：你看，我这不是损失了相当于<script type="math/tex">\frac{F}{g}=\lambda \sqrt{\frac{2h}{g} }</script>这么多的小米吗！</p><p>县太爷笑道：别忘了，现在空中还有小米呢</p><p>老板一听，感到有些疑惑：啊？这么说难道是我亏了吗？</p><p>县太爷接着写到：<br>记张大伯所说的<script type="math/tex">\lambda \sqrt{\frac{2h}{g} } =m_{2}</script><br>而此时在空中的小米质量为$m_{3} $<br>则<script type="math/tex">m_{3}=\lambda t</script><br>其中<script type="math/tex">t=\sqrt{\frac{2h}{g} }</script> ，代入发现<script type="math/tex">m_{2} =m_{3}</script></p><p>这也就是说，你们俩一点都没有亏</p><p>张大伯和米店老板听了，相视一笑，从此过上了快乐的生活。</p>]]></content>
       
       
+        <tags>
+            
+            <tag> 娱乐 </tag>
+            
+        </tags>
+      
     </entry>
     
     <entry>
