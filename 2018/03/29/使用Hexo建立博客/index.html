@@ -139,10 +139,21 @@ var _hmt = _hmt || [];
 <p>Git, Node.js, Hexo, npm</p>
 <h2 id="安装工具"><a href="#安装工具" class="headerlink" title="安装工具"></a>安装工具</h2><ol>
 <li><a href="https://git-scm.com/downloads" target="_blank" rel="noopener">安装Git</a></li>
-<li><a href="https://nodejs.org/en/" target="_blank" rel="noopener">安装Node.js</a><br>Node.js安装包中带有npm package manager，默认安装</li>
-<li>安装Hexo<br>可以参考<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="noopener">Hexo的官方文档</a><br>在一个盘符下建立一个空目录，如<code>F:/Hexo</code>并在<code>cmd</code>中进入到该目录，执行npm安装命令<br><code>npm install -g hexo-cli</code><br>可能会出现几个WARN，但是不用担心，这不会影响正常使用。 然后输入<br><code>npm install hexo --save</code><br>自动将模块和版本号添加到dependencies部分；<br>然后输入<code>hexo -v</code><br>看到hexo的版本号，说明安装成功。</li>
 </ol>
 </blockquote>
+<ol>
+<li><p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">安装Node.js</a></p>
+<a id="more"></a>
+<blockquote>
+<p>Node.js安装包中带有npm package manager，默认安装</p>
+</blockquote>
+</li>
+<li><p>安装Hexo</p>
+<blockquote>
+<p>可以参考<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="noopener">Hexo的官方文档</a><br>在一个盘符下建立一个空目录，如<code>F:/Hexo</code>并在<code>cmd</code>中进入到该目录，执行npm安装命令<br><code>npm install -g hexo-cli</code><br>可能会出现几个WARN，但是不用担心，这不会影响正常使用。 然后输入<br><code>npm install hexo --save</code><br>自动将模块和版本号添加到dependencies部分；<br>然后输入<code>hexo -v</code><br>看到hexo的版本号，说明安装成功。</p>
+</blockquote>
+</li>
+</ol>
 <hr>
 <h2 id="配置Hexo"><a href="#配置Hexo" class="headerlink" title="配置Hexo"></a>配置Hexo</h2><hr>
 <ol>
@@ -203,12 +214,12 @@ var _hmt = _hmt || [];
     
     
     <a href="/2018/03/29/幸福快乐的生活/" type="button" class="btn btn-default"><i
-                class="fa fa-arrow-circle-o-left"></i> Prev</a>
+                class="fa fa-arrow-circle-o-left"></i> Anterior</a>
     
 
     <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
     
-    <a type="button" class="btn btn-default disabled">Next<i class="fa fa-arrow-circle-o-right"></i></a>
+    <a type="button" class="btn btn-default disabled">Próximo<i class="fa fa-arrow-circle-o-right"></i></a>
     
 
     
@@ -220,7 +231,7 @@ var _hmt = _hmt || [];
 	<!-- comment -->
 	
 <section id="comment">
-    <h2 class="title">Comments</h2>
+    <h2 class="title">Comentários</h2>
 
     
 </section>
@@ -305,22 +316,7 @@ var _hmt = _hmt || [];
 	 }
 	 var path = "/" + search_path;
      searchFunc(path, 'local-search-input', 'local-search-result');
-   </script>
+   </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
    </html>
