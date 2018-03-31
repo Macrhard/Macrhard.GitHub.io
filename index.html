@@ -138,6 +138,72 @@ var _hmt = _hmt || [];
 <div class="row">
 	<div class="col-md-8">
 		<h3 class="title">
+			<a href="/2018/03/31/RHCSA/" title="基础学习">RHCSA</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2018-03-31  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<p><a href="http://www.runoob.com/linux/linux-command-manual.html" target="_blank" rel="noopener">参考连接</a></p>
+<h3 id="权限：rwx"><a href="#权限：rwx" class="headerlink" title="权限：rwx"></a>权限：rwx</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>文件类型</th>
+<th>属主权限</th>
+<th>属组权限</th>
+<th>其他用户</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>1   2   3</td>
+<td>4   5   6</td>
+<td>7   8   9</td>
+</tr>
+<tr>
+<td>d</td>
+<td>rwx</td>
+<td>r-x</td>
+<td>r-x</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>-普通文件    d目录文件    l连接文件</p>
+<p>新建文件时默认权限：</p>
+<p>​    对于普通文件类型的权限属性为：666</p>
+<p>​    对于普通目录类型的权限属性为：777</p>
+<p>通过权限掩码，可以控制当前创建出来的文件的权限属性</p>
+<p>更改权限掩码为022</p>
+<p>uamsk 022</p>
+<p>新建的普通文件类型的权限属性将在原有的666基础上减去022即为此时新建文件的权限属性。</p>
+<p>更改权限</p>
+<p>chmod     777 1.txt</p>
+<p>chmod    u=r— 1.txt</p>
+<p>chmod     u-wx 1.txt</p>
+
+	
+	</div>
+  <a type="button" href="/2018/03/31/RHCSA/#more" class="btn btn-default more">Leia Mais</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
 			<a href="/2018/03/29/测试目录/" >测试目录及标题</a>
 		</h3>
 		</div>
@@ -196,51 +262,6 @@ var _hmt = _hmt || [];
 <div class="row">
 	<div class="col-md-8">
 		<h3 class="title">
-			<a href="/2018/03/29/幸福快乐的生活/" >幸福快乐的生活</a>
-		</h3>
-		</div>
-	<div class="col-md-4">
-		<div class="date">post @ 2018-03-29  </div>
-		</div>
-	</div>
-	
-
-
-			<div class="entry">
-  <div class="row">
-	
-	
-		<p>农民张大伯去买一斤小米</p>
-<p>米店老板掏出一个秤，放在地上，随手拿起一把刀割破了一个米袋，米就哗哗哗的掉到秤上<br>等到秤的示数为一斤时的瞬间，老板堵住了米袋子的口子，把秤上的小米给了张大伯</p>
-<p>张大伯心满意足的走在回家的路上，心中感慨老板真是个豪爽的人</p>
-<p>突然，他觉得不太对劲：<br>按照<script type="math/tex">F=ma</script>，小米在落在秤盘上时应该会产生一个力……所以他买到的米其实不足一斤</p>
-<p>第二天，张大伯将老板告上了官府。</p>
-<p>张大伯把自己的想法说出来了<br>老板则表示这样做每次都没出过差错</p>
-<p>县太爷听了，微微一笑：“这是误会，老板没有坑你”</p>
-<p>说完，县太爷猛地取一根毛笔，蘸墨写到：</p>
-<p>设秤距离抛出点的竖直高度为h<br>记小米的流速为<script type="math/tex">\lambda =m_{0} kg/s</script><br>则在秤恰好显示1斤时，取此后一极短时间<script type="math/tex">\Delta t</script></p>
-<p>此时间内，与秤盘发生碰撞的小米质量设为<script type="math/tex">m</script><br>则<script type="math/tex">m=\lambda \bullet \Delta t</script><br>由动量定理，得</p>
-<script type="math/tex; mode=display">F\Delta t=mv</script><p>其中<script type="math/tex">v=\sqrt{2gh}</script></p>
-<p>联立得$F=\lambda \sqrt{2gh}$<br>也就是说此时秤的示数$N=F+m_{1}g$ （$m_1$为已经落在盘上小米的质量）</p>
-<p>张大伯一听，愤怒的说：你看，我这不是损失了相当于<script type="math/tex">\frac{F}{g}=\lambda \sqrt{\frac{2h}{g} }</script>这么多的小米吗！</p>
-<p>县太爷笑道：别忘了，现在空中还有小米呢</p>
-<p>老板一听，感到有些疑惑：啊？这么说难道是我亏了吗？</p>
-<p>县太爷接着写到：<br>记张大伯所说的<script type="math/tex">\lambda \sqrt{\frac{2h}{g} } =m_{2}</script><br>而此时在空中的小米质量为$m_{3} $<br>则<script type="math/tex">m_{3}=\lambda t</script><br>其中<script type="math/tex">t=\sqrt{\frac{2h}{g} }</script> ，代入发现<script type="math/tex">m_{2} =m_{3}</script></p>
-<p>这也就是说，你们俩一点都没有亏</p>
-<p>张大伯和米店老板听了，相视一笑，从此过上了快乐的生活。</p>
-
-	
-	</div>
-  <a type="button" href="/2018/03/29/幸福快乐的生活/#more" class="btn btn-default more">Leia Mais</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->
-<div class="row">
-	<div class="col-md-8">
-		<h3 class="title">
 			<a href="/2018/03/29/使用Hexo建立博客/" >使用Hexo建立博客</a>
 		</h3>
 		</div>
@@ -285,7 +306,7 @@ var _hmt = _hmt || [];
 <li><p>安装使用<code>Latex</code> 语法来书写数学公式的插件</p>
 <p><a href="https://blog.csdn.net/u014630987/article/details/78670258" target="_blank" rel="noopener"> 参考博客连接</a></p>
 <p>需要注意的是</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">修改</span><br><span class="line">escape: /^\\([\\`*&#123;&#125;\[\]()#$+\-.!_&gt;])/,</span><br><span class="line">为</span><br><span class="line">escape: /^\\([`*\[\]()# +\-.!_&gt;])/,</span><br><span class="line"></span><br><span class="line">修改</span><br><span class="line">em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br><span class="line">为</span><br><span class="line">em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br><span class="line"></span><br><span class="line">被修改的文件是</span><br><span class="line">node_modules\kramed\lib\rules\inline.js</span><br></pre></td></tr></table></figure>
+<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">修改</span><br><span class="line">escape: /^<span class="symbol">\\</span>([<span class="symbol">\\</span>`*&#123;&#125;<span class="symbol">\[</span><span class="symbol">\]</span>()#$+<span class="symbol">\-</span>.!_&gt;])/,</span><br><span class="line">为</span><br><span class="line">escape: /^<span class="symbol">\\</span>([`*<span class="symbol">\[</span><span class="symbol">\]</span>()# +<span class="symbol">\-</span>.!_&gt;])/,</span><br><span class="line"></span><br><span class="line">修改</span><br><span class="line">em: /^<span class="symbol">\b</span>_((?:__|[<span class="symbol">\s</span><span class="symbol">\S</span>])+?)_<span class="symbol">\b</span>|^<span class="symbol">\*</span>((?:<span class="symbol">\*</span><span class="symbol">\*</span>|[<span class="symbol">\s</span><span class="symbol">\S</span>])+?)<span class="symbol">\*</span>(?!<span class="symbol">\*</span>)/,</span><br><span class="line">为</span><br><span class="line">em: /^<span class="symbol">\*</span>((?:<span class="symbol">\*</span><span class="symbol">\*</span>|[<span class="symbol">\s</span><span class="symbol">\S</span>])+?)<span class="symbol">\*</span>(?!<span class="symbol">\*</span>)/,</span><br><span class="line"></span><br><span class="line">被修改的文件是</span><br><span class="line">node_modules<span class="symbol">\k</span>ramed<span class="symbol">\l</span>ib<span class="symbol">\r</span>ules<span class="symbol">\i</span>nline.js</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <hr>
@@ -304,10 +325,10 @@ var _hmt = _hmt || [];
 </li>
 </ol>
 <h3 id="配置Deployment"><a href="#配置Deployment" class="headerlink" title="配置Deployment"></a>配置Deployment</h3><blockquote>
-<p>在根目录_config.yml文件中，找到Deployment，然后按照如下修改：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:yourname/yourname.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
+<p>在根目录_config.yml文件中，找到Deployment，然后按照如下修改：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">  <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">repo</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:yourname/yourname.github.io.git</span><br><span class="line">  <span class="attribute">branch</span>: master</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <p>比如我的仓库的地址是<code>git@github.com:Macrhard/Macrhard.github.io.git</code>，所以配置如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:Macrhard/Macrhard.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">  <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">repo</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:Macrhard/Macrhard.github.io.git</span><br><span class="line">  <span class="attribute">branch</span>: master</span><br></pre></td></tr></table></figure>
 <h2 id="建立博客及部署"><a href="#建立博客及部署" class="headerlink" title="建立博客及部署"></a>建立博客及部署</h2><ol>
 <li>新建一篇博客，在cmd执行命令：<br><code>hexo new post &quot;标题名&quot;</code><br>这时候在文件夹<code>source\_posts_posts</code>目录下将会看到已经创建的文件。</li>
 <li>使用编辑器编好文章，那么就可以使用命令：<code>hexo d -g</code>，生成以及部署了</li>
@@ -357,6 +378,8 @@ var _hmt = _hmt || [];
 		<h4>Categorias</h4>
 		<ul class="tag_box inline list-unstyled">
 		
+			<li><a href="/categories/Linux/">Linux<span>1</span></a></li>
+		
 			<li><a href="/categories/测试/">测试<span>1</span></a></li>
 		
 		</ul>
@@ -370,7 +393,7 @@ var _hmt = _hmt || [];
 		
 			<li><a href="/tags/Test/">Test<span>1</span></a></li>
 		
-			<li><a href="/tags/娱乐/">娱乐<span>1</span></a></li>
+			<li><a href="/tags/Linux/">Linux<span>1</span></a></li>
 		
 		 
 		</ul>
@@ -384,15 +407,15 @@ var _hmt = _hmt || [];
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2018/03/31/RHCSA/"  title="基础学习" ><i class="fa fa-file-o"></i>RHCSA</a>
+      </li>
+    
+      <li>
         <a href="/2018/03/29/测试目录/" ><i class="fa fa-file-o"></i>测试目录及标题</a>
       </li>
     
       <li>
         <a href="/2018/03/29/ceshi/"  title="这是一个测试页面" ><i class="fa fa-file-o"></i>ceshi</a>
-      </li>
-    
-      <li>
-        <a href="/2018/03/29/幸福快乐的生活/" ><i class="fa fa-file-o"></i>幸福快乐的生活</a>
       </li>
     
       <li>
