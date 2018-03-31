@@ -153,9 +153,48 @@ var _hmt = _hmt || [];
 	
 	
 		<p><a href="http://www.runoob.com/linux/linux-command-manual.html" target="_blank" rel="noopener">参考连接</a></p>
+<h3 id="权限：rwx"><a href="#权限：rwx" class="headerlink" title="权限：rwx"></a>权限：rwx</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>文件类型</th>
+<th>属主权限</th>
+<th>属组权限</th>
+<th>其他用户</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>1   2   3</td>
+<td>4   5   6</td>
+<td>7   8   9</td>
+</tr>
+<tr>
+<td>d</td>
+<td>rwx</td>
+<td>r-x</td>
+<td>r-x</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>-普通文件    d目录文件    l连接文件</p>
+<p>新建文件时默认权限：</p>
+<p>​    对于普通文件类型的权限属性为：666</p>
+<p>​    对于普通目录类型的权限属性为：777</p>
+<p>通过权限掩码，可以控制当前创建出来的文件的权限属性</p>
+<p>更改权限掩码为022</p>
+<p>uamsk 022</p>
+<p>新建的普通文件类型的权限属性将在原有的666基础上减去022即为此时新建文件的权限属性。</p>
+<p>更改权限</p>
+<p>chmod     777 1.txt</p>
+<p>chmod    u=r— 1.txt</p>
+<p>chmod     u-wx 1.txt</p>
+
 	
 	</div>
-  <a type="button" href="/2018/03/31/RHCSA/#more" class="btn btn-default more">Read More</a>
+  <a type="button" href="/2018/03/31/RHCSA/#more" class="btn btn-default more">Leia Mais</a>
 </div>
 
 		
@@ -179,10 +218,40 @@ var _hmt = _hmt || [];
   <div class="row">
 	
 	
-		<h1 id="CCNA学习笔记"><a href="#CCNA学习笔记" class="headerlink" title="CCNA学习笔记"></a>CCNA学习笔记</h1>
+		<h1 id="CCNA学习笔记"><a href="#CCNA学习笔记" class="headerlink" title="CCNA学习笔记"></a>CCNA学习笔记</h1><hr>
+<p>在不放弃分类编址的情况下把大的网络划分成若干个子网,从1985年起IP地址中又增加了一个“子网字段”使两级的IP地址变成了三级IP地址。使多个物理网络可以共用一个网络前缀。这种做法叫做子网划分，已成为正式标准协议。</p>
+<p> 从主机字段借用若干个字段作为子网号，而主机号也就相应减少了若干比特。<br><figure class="highlight fix"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">ip地址</span>=<span class="string"> 网络号，子网号，主机号</span></span><br></pre></td></tr></table></figure></p>
+<p> 子网位从主机字段的最左边开始连续借用。<br> 子网掩码：用来划分子网段与主机段。<br> 一般子网号全0或全1不分配，而主机号全为1和全为0是始终不分配的。</p>
+<p> 1993年以后为了最大限度的利用ip地址，internet采用了无分类ip编址方案。即CIDR（无类域间路由）分块方案</p>
+<p> OSI/RM第二层数据链路层通过地理地址进行数据的传送<br>第三层网络层通过IP地址进行数据的传送．<br>物理地址就是MAC地址．<br>IP地址是只在软件中使用的抽象地址. 不论是局域网还是广域网, 发送和接收信息时都依靠的是硬件地址. 所以协议软件发送信息包之前, 必须把IP地址翻译成对应的物理地址, 这个过程称为地址解析(address resolution)</p>
+<p> 默认子网掩码：是分类网络的子网掩码<br> A类网络：255.0.0.0<br> B类网络：255.255.0.0<br> C类网络：255.255.255.0</p>
+<p> 子网地址：网络号和子网号不变，主机号全零，也可以 子网地址 = 主机ip AND 子网掩码。</p>
+<p> 广播地址：一对多进行通讯，主机号为全1</p>
+<p>网络号保留，主机号全0即是该网络的网络地址</p>
+<p>主机号全为一  和全为零是不分配的<br>全0 为网络地址<br>全1 为该网络内的广播地址<br>2811<br>2960<br>2FEW2W</p>
+<p>在此输入正文<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#进入第二级别   查看</span></span><br><span class="line">enable</span><br><span class="line"><span class="comment">#进入第三级别</span></span><br><span class="line">configure terminal</span><br><span class="line"><span class="comment">#进入第四级别 专项配置</span></span><br><span class="line">interface XXXXXX  </span><br><span class="line"></span><br><span class="line"><span class="comment">#路由器以太网0/0端口打开</span></span><br><span class="line">Router(config)#Interface FastEthernet0/0</span><br><span class="line">Router(config-if)# <span class="literal">no</span> shutdown</span><br><span class="line"></span><br><span class="line"><span class="comment">#路由器ip配置</span></span><br><span class="line">Router(config-if)#ip<span class="built_in"> address </span>192.168.1.100 255.255.255.0</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#查看接口摘要</span></span><br><span class="line">show<span class="built_in"> ip interface </span>brief </span><br><span class="line"><span class="comment">#</span></span><br></pre></td></tr></table></figure></p>
+<p>网关地址：路由器的ip地址</p>
+<p>电脑自动获取ip<br>DHCP：动态主机配置协议<br>需要一个DHCP服务器，任何一个电子设备都可以担当一个服务器<br>成为DHCP服务器的条件</p>
+<ol>
+<li>该设备必须拥有接口或者网卡连接到所需要的</li>
+</ol>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#创建名为mypool_1的dhcp池塘</span></span><br><span class="line">ip dhcp<span class="built_in"> pool </span>mypool_1   </span><br><span class="line"></span><br><span class="line"><span class="comment">#关联端口  地址范围</span></span><br><span class="line">network 192.168.1.0 255.255.255.0 </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#网关地址 </span></span><br><span class="line">default-router 192.168.1.1 </span><br><span class="line"></span><br><span class="line"><span class="comment">#DNS服务器</span></span><br><span class="line">dns-server 114.114.114.114</span><br></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#关闭 DNS服务</span></span><br><span class="line">Router(config)#<span class="literal">no</span><span class="built_in"> ip </span>domain-lookup</span><br><span class="line"><span class="comment">#修改默认主机名为R1</span></span><br><span class="line">Router(config)#hostname R1</span><br><span class="line"></span><br><span class="line"><span class="comment">#编写静态路由</span></span><br><span class="line">Router(config)#ip<span class="built_in"> route </span>192.168.3.0 255.255.255.0 192.168.2.1</span><br><span class="line">                            目标路由                下一跳</span><br></pre></td></tr></table></figure>
+<p>同层用交叉线，不同层用直连线</p>
+<p>路由器的作用：</p>
+<ol>
+<li>用于不同网络的互联</li>
+<li>为它所承载的数据做路径的选择—选路</li>
+<li>当数据包进入路由器时，路由器将基于目标ip地址查看本地的路由表；若表中存在记录将无条件按照记录转发，若没有记录将丢弃流量。</li>
+<li><p>默认路由器仅存在直连路由，非直连网段，被称为未知网段。<br>获取未知网段的方法：<br> 1.静态路由：管理员手写<br> 2.动态路由：所以的路由器间使用算法沟通计算，自动生成。</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查看路由器的路由表</span></span><br><span class="line">show<span class="built_in"> ip </span>route</span><br><span class="line"></span><br><span class="line"><span class="comment">#静态路由写法</span></span><br><span class="line">ip<span class="built_in"> route </span>192.168.3.0 255.255.255.0 192.168.2.2</span><br><span class="line">   前缀            目标网络号          下一跳</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">路由探测</span><br><span class="line">tracert</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
 	
 	</div>
-  <a type="button" href="/2018/03/29/测试目录/#more" class="btn btn-default more">Read More</a>
+  <a type="button" href="/2018/03/29/测试目录/#more" class="btn btn-default more">Leia Mais</a>
 </div>
 
 		
@@ -211,7 +280,52 @@ var _hmt = _hmt || [];
 
 	
 	</div>
-  <a type="button" href="/2018/03/29/ceshi/#more" class="btn btn-default more">Read More</a>
+  <a type="button" href="/2018/03/29/ceshi/#more" class="btn btn-default more">Leia Mais</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2018/03/29/幸福快乐的生活/" >幸福快乐的生活</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2018-03-29  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<p>农民张大伯去买一斤小米</p>
+<p>米店老板掏出一个秤，放在地上，随手拿起一把刀割破了一个米袋，米就哗哗哗的掉到秤上<br>等到秤的示数为一斤时的瞬间，老板堵住了米袋子的口子，把秤上的小米给了张大伯</p>
+<p>张大伯心满意足的走在回家的路上，心中感慨老板真是个豪爽的人</p>
+<p>突然，他觉得不太对劲：<br>按照<script type="math/tex">F=ma</script>，小米在落在秤盘上时应该会产生一个力……所以他买到的米其实不足一斤</p>
+<p>第二天，张大伯将老板告上了官府。</p>
+<p>张大伯把自己的想法说出来了<br>老板则表示这样做每次都没出过差错</p>
+<p>县太爷听了，微微一笑：“这是误会，老板没有坑你”</p>
+<p>说完，县太爷猛地取一根毛笔，蘸墨写到：</p>
+<p>设秤距离抛出点的竖直高度为h<br>记小米的流速为<script type="math/tex">\lambda =m_{0} kg/s</script><br>则在秤恰好显示1斤时，取此后一极短时间<script type="math/tex">\Delta t</script></p>
+<p>此时间内，与秤盘发生碰撞的小米质量设为<script type="math/tex">m</script><br>则<script type="math/tex">m=\lambda \bullet \Delta t</script><br>由动量定理，得</p>
+<script type="math/tex; mode=display">F\Delta t=mv</script><p>其中<script type="math/tex">v=\sqrt{2gh}</script></p>
+<p>联立得$F=\lambda \sqrt{2gh}$<br>也就是说此时秤的示数$N=F+m_{1}g$ （$m_1$为已经落在盘上小米的质量）</p>
+<p>张大伯一听，愤怒的说：你看，我这不是损失了相当于<script type="math/tex">\frac{F}{g}=\lambda \sqrt{\frac{2h}{g} }</script>这么多的小米吗！</p>
+<p>县太爷笑道：别忘了，现在空中还有小米呢</p>
+<p>老板一听，感到有些疑惑：啊？这么说难道是我亏了吗？</p>
+<p>县太爷接着写到：<br>记张大伯所说的<script type="math/tex">\lambda \sqrt{\frac{2h}{g} } =m_{2}</script><br>而此时在空中的小米质量为$m_{3} $<br>则<script type="math/tex">m_{3}=\lambda t</script><br>其中<script type="math/tex">t=\sqrt{\frac{2h}{g} }</script> ，代入发现<script type="math/tex">m_{2} =m_{3}</script></p>
+<p>这也就是说，你们俩一点都没有亏</p>
+<p>张大伯和米店老板听了，相视一笑，从此过上了快乐的生活。</p>
+
+	
+	</div>
+  <a type="button" href="/2018/03/29/幸福快乐的生活/#more" class="btn btn-default more">Leia Mais</a>
 </div>
 
 		
@@ -296,7 +410,7 @@ var _hmt = _hmt || [];
 
 	
 	</div>
-  <a type="button" href="/2018/03/29/使用Hexo建立博客/#more" class="btn btn-default more">Read More</a>
+  <a type="button" href="/2018/03/29/使用Hexo建立博客/#more" class="btn btn-default more">Leia Mais</a>
 </div>
 
 		
@@ -325,7 +439,7 @@ var _hmt = _hmt || [];
 			
   <div id="site_search">
    <div class="form-group">
-    <input type="text" id="local-search-input" name="q" results="0" placeholder="Search" class="st-search-input st-default-search-input form-control"/>
+    <input type="text" id="local-search-input" name="q" results="0" placeholder="Busca" class="st-search-input st-default-search-input form-control"/>
    </div>  
   <div id="local-search-result"></div>
   </div>
@@ -334,7 +448,7 @@ var _hmt = _hmt || [];
 		
 			
 	<div class="widget">
-		<h4>Categories</h4>
+		<h4>Categorias</h4>
 		<ul class="tag_box inline list-unstyled">
 		
 			<li><a href="/categories/Linux/">Linux<span>1</span></a></li>
@@ -350,9 +464,11 @@ var _hmt = _hmt || [];
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/Test/">Test<span>1</span></a></li>
-		
 			<li><a href="/tags/Linux/">Linux<span>1</span></a></li>
+		
+			<li><a href="/tags/娱乐/">娱乐<span>1</span></a></li>
+		
+			<li><a href="/tags/Test/">Test<span>1</span></a></li>
 		
 		 
 		</ul>
@@ -362,7 +478,7 @@ var _hmt = _hmt || [];
 		
 			
 <div class="widget">
-  <h4>Recent Posts</h4>
+  <h4>Posts recentes</h4>
   <ul class="entry list-unstyled">
     
       <li>
@@ -375,6 +491,10 @@ var _hmt = _hmt || [];
     
       <li>
         <a href="/2018/03/29/ceshi/"  title="这是一个测试页面" ><i class="fa fa-file-o"></i>ceshi</a>
+      </li>
+    
+      <li>
+        <a href="/2018/03/29/幸福快乐的生活/" ><i class="fa fa-file-o"></i>幸福快乐的生活</a>
       </li>
     
       <li>
