@@ -6,15 +6,15 @@
   <meta http-equiv="cache-control" content="no-cache">
   <meta http-equiv="expires" content="0">
   
-  <title>categories | Mahdi</title>
+  <title>磁盘操作 | Mahdi</title>
   <meta name="author" content="Mahdi">
   
-  <meta name="description" content="个人博客">
+  <meta name="description" content="对磁盘的挂载分区等操作">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="categories"/>
+  <meta property="og:title" content="磁盘操作"/>
   <meta property="og:site_name" content="Mahdi"/>
 
   
@@ -114,30 +114,63 @@ var _hmt = _hmt || [];
   <div class="container">
   	<div class="content">
     	 
+
+
 	
 		<div class="page-header">
-			<h1> categories</h1>
+			<h1> 磁盘操作</h1>
 		</div>
 	
 
 
 
-<div class="row page">
+<div class="row post">
 	<!-- cols -->
 	
-	<div class="col-md-12">
+	<div id="top_meta"></div>
+	<div class="col-md-9">
 	
 
 	<!-- content -->
 	<div class="mypage">		
+	  
+		 <div class="alert alert-success description">
+			<i class="fa fa-info-circle"></i> 对磁盘的挂载分区等操作
+		 </div> <!-- alert -->
 	  		
 
-	  	  
+	  <p>1.先在磁盘上分区</p>
+<a id="more"></a>
+<p>2.创建物理卷，把新建的分区映射成物理卷</p>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">pvcreate</span> 分区名</span><br></pre></td></tr></table></figure>
+<p>3.创建卷组</p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vgcreate vg0 </span><br><span class="line"><span class="deletion">-s	设置卷组PE的大小</span></span><br></pre></td></tr></table></figure>
+<p>4.从卷组里面创建逻辑卷</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lvcreate -<span class="built_in">n</span> <span class="symbol">lv0</span> -L <span class="number">2</span>G 卷组的名字</span><br></pre></td></tr></table></figure>
+<p>5.安装文件系统</p>
+<p>6.blkid 配置文件</p>
+<p>7.mount -a</p>
+<p>设置固定ip地址</p>
+<p>nmcli connection modify eno16777736 ipv4.addresses 172.168.1.13/24 ipv4.gateway 192.168.1.1/24 ipv4.method  manual connection.autoconnect yes</p>
+<p>设置好后重启网卡服务</p>
+<p>systemctl restart network</p>
+	  
 	</div>
 
 	<div>
   	<center>
 	<div class="pagination">
+
+    
+    
+    <a type="button" class="btn btn-default disabled"><i class="fa fa-arrow-circle-o-left"></i>Anterior</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2018/03/31/Git-使用方法/" type="button" class="btn btn-default ">Próximo<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
 
     
 </div>
@@ -147,9 +180,68 @@ var _hmt = _hmt || [];
 	
 	<!-- comment -->
 	
+<section id="comment">
+    <h2 class="title">Comentários</h2>
+
+    
+</section>
+
 
 	</div> <!-- col-md-9/col-md-12 -->
 		
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2018-04-01 
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/Linux/">Linux<span>2</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/Linux/">Linux<span>2</span></a></li>
+    </ul>
+	</div>
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
+	   <div id="toc" class="toc collapse in">
+		   <span class="toc-title">Contents</span>
+			
+		</div>
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+	</div>
 		
 
 </div><!-- row -->
