@@ -152,8 +152,32 @@ var _hmt = _hmt || [];
 <p>7.mount -a</p>
 <p>设置固定ip地址</p>
 <p>nmcli connection modify eno16777736 ipv4.addresses 172.168.1.13/24 ipv4.gateway 192.168.1.1/24 ipv4.method  manual connection.autoconnect yes</p>
+<p>重新加载网卡</p>
+<p>nmcli connection reload </p>
+<p>激活网卡</p>
+<p>nmcli connection up eno<em>*</em> </p>
 <p>设置好后重启网卡服务</p>
 <p>systemctl restart network</p>
+<p>软件安装</p>
+<p>rpm方式安装</p>
+<p>​    光盘镜像安装</p>
+<p>​    1.挂载光驱    </p>
+<p>​        mount /dev/sr0 /mnt</p>
+<p>​    2.进入光盘镜像包目录</p>
+<p>​        cd /mnt/Packages</p>
+<p>​    3.相关安装命令</p>
+<p>​    安装    </p>
+<p>​    rpm -ivh  包名</p>
+<p>​    卸载</p>
+<p>​    rpm -e 包名</p>
+<p>​    查看是否安装了tree</p>
+<p>​    rpm -eq | grep tree </p>
+<p>​    rpm -lq</p>
+<p>[base]                源标识，可以自定义，推荐base</p>
+<p>name=base            源名称，可以自定义，推荐base</p>
+<p>baseurl=file:// /mnt    源地址，因为是本地源 所以是应本地文件协议file:// </p>
+<p>enable=1            启用源</p>
+<p>gpgcheck=0            关闭校验</p>
 	  
 	</div>
 
@@ -163,12 +187,13 @@ var _hmt = _hmt || [];
 
     
     
-    <a type="button" class="btn btn-default disabled"><i class="fa fa-arrow-circle-o-left"></i>Prev</a>
+    <a href="/2018/04/01/更改Redhat-Enterprise-7-2的yum源/" type="button" class="btn btn-default"><i
+                class="fa fa-arrow-circle-o-left"></i> Anterior</a>
     
 
     <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
     
-    <a href="/2018/03/31/Git-使用方法/" type="button" class="btn btn-default ">Next<i
+    <a href="/2018/03/31/Git-使用方法/" type="button" class="btn btn-default ">Próximo<i
                 class="fa fa-arrow-circle-o-right"></i></a>
     
 
@@ -181,7 +206,7 @@ var _hmt = _hmt || [];
 	<!-- comment -->
 	
 <section id="comment">
-    <h2 class="title">Comments</h2>
+    <h2 class="title">Comentários</h2>
 
     
 </section>
@@ -208,7 +233,7 @@ var _hmt = _hmt || [];
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/Linux/">Linux<span>2</span></a></li>
+    <li><a href="/categories/Linux/">Linux<span>3</span></a></li>
   </li>
 
     </ul>
@@ -221,7 +246,7 @@ var _hmt = _hmt || [];
 	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
     <ul id="tags" class="tag_box list-unstyled collapse in">	  
 	    
-  <li><a href="/tags/Linux/">Linux<span>2</span></a></li>
+  <li><a href="/tags/Linux/">Linux<span>3</span></a></li>
     </ul>
 	</div>
 		
@@ -291,22 +316,7 @@ var _hmt = _hmt || [];
 	 }
 	 var path = "/" + search_path;
      searchFunc(path, 'local-search-input', 'local-search-result');
-   </script>
+   </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
    </html>
