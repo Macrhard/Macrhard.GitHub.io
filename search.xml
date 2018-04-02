@@ -3,6 +3,27 @@
   
     
     <entry>
+      <title>更改Redhat Enterprise 7.2的yum源</title>
+      <link href="/2018/04/01/%E6%9B%B4%E6%94%B9Redhat-Enterprise-7-2%E7%9A%84yum%E6%BA%90/"/>
+      <url>/2018/04/01/%E6%9B%B4%E6%94%B9Redhat-Enterprise-7-2%E7%9A%84yum%E6%BA%90/</url>
+      <content type="html"><![CDATA[<h3 id="查看系统内核版本"><a href="#查看系统内核版本" class="headerlink" title="查看系统内核版本"></a>查看系统内核版本</h3><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cat</span> /proc/<span class="keyword">version</span></span><br></pre></td></tr></table></figure><h3 id="查看系统发行版本号"><a href="#查看系统发行版本号" class="headerlink" title="查看系统发行版本号"></a>查看系统发行版本号</h3><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/redhat-<span class="built_in">release</span></span><br></pre></td></tr></table></figure><p>要通过上面的版本号确定安装的yum</p><p><a href="http://vault.centos.org/centos/7.2.1511/os/x86_64/Packages/" target="_blank" rel="noopener">http://vault.centos.org/centos/7.2.1511/os/x86_64/Packages/</a></p>]]></content>
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>磁盘操作</title>
       <link href="/2018/04/01/disk/"/>
       <url>/2018/04/01/disk/</url>
