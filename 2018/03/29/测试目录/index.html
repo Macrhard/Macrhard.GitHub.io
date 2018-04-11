@@ -176,12 +176,12 @@ var _hmt = _hmt || [];
     
     
     <a href="/2018/03/31/RHCSA/" type="button" class="btn btn-default"><i
-                class="fa fa-arrow-circle-o-left"></i> Prev</a>
+                class="fa fa-arrow-circle-o-left"></i> 上一頁</a>
     
 
     <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
     
-    <a href="/2018/03/29/幸福快乐的生活/" type="button" class="btn btn-default ">Next<i
+    <a href="/2018/03/29/幸福快乐的生活/" type="button" class="btn btn-default ">下一頁<i
                 class="fa fa-arrow-circle-o-right"></i></a>
     
 
@@ -194,7 +194,7 @@ var _hmt = _hmt || [];
 	<!-- comment -->
 	
 <section id="comment">
-    <h2 class="title">Comments</h2>
+    <h2 class="title">留言</h2>
 
     
 </section>
@@ -285,7 +285,22 @@ var _hmt = _hmt || [];
 	 }
 	 var path = "/" + search_path;
      searchFunc(path, 'local-search-input', 'local-search-result');
-   </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+   </script>
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
    </html>
