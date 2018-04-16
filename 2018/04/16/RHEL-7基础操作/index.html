@@ -1,0 +1,364 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>RHEL 7基础操作 | Macrohard</title>
+  <meta name="author" content="Mahdi">
+  
+  <meta name="description" content="个人博客">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="RHEL 7基础操作"/>
+  <meta property="og:site_name" content="Macrohard"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-70812759-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?cb5448498d7169c668b07c2b255d62c1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+</head>
+
+ <body>  
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">Macrohard</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class=""></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/zero/test.html" title="Subscribe me.">
+			  <i class=""></i>Love
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header">
+			<h1> RHEL 7基础操作</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <h1 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h1><h2 id="系统工作命令"><a href="#系统工作命令" class="headerlink" title="系统工作命令"></a>系统工作命令</h2><ol>
+<li><p>echo </p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//把指定字符串或者变量的值输出到终端屏幕上</span></span><br><span class="line">echo [字符串 <span class="string">| $变量]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>date</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">%t tab键 %Y 年 %H 小时 %M 分钟 %S 秒 %j 今年中的第几天</span><br><span class="line">//按照此格式<span class="number">2018</span>-<span class="number">04</span>-<span class="number">15</span> <span class="number">22</span>:<span class="number">52</span>:<span class="number">39</span>  <span class="number">105</span>th</span><br><span class="line">date <span class="string">"+%Y-%m-%d %H:%M:%S  %jth"</span></span><br><span class="line"></span><br><span class="line">//设置时间为<span class="number">2018</span>-<span class="number">04</span>-<span class="number">15</span> <span class="number">22</span>:<span class="number">52</span>:<span class="number">39</span></span><br><span class="line">date -<span class="keyword">s</span> <span class="string">"20180415 22:52:39"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>wget</p>
+<p>用于在终端中下载网络文件</p>
+<figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">wget [参数] 下载地址</span><br><span class="line">-<span class="ruby">b后台下载</span></span><br><span class="line"><span class="ruby">-P下载到指定目录</span></span><br><span class="line"><span class="ruby">-t最大次数尝试</span></span><br><span class="line"><span class="ruby">-p下载页面内的所有资源，包括图片，视频</span></span><br><span class="line"><span class="ruby">-r递归下载</span></span><br><span class="line"><span class="ruby">wget <span class="symbol">http:</span>/<span class="regexp">/www.linuxprobe.com/docs</span><span class="regexp">/LinuxProbe.pdf</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>pidof</p>
+<p>查询指定某个服务的PID值</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">pidof sshd</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>kill</p>
+<p>终止指定PID的服务进程</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">kill</span> 2015</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="系统状态检测命令"><a href="#系统状态检测命令" class="headerlink" title="系统状态检测命令"></a>系统状态检测命令</h2><ol>
+<li><p>ifconfig</p>
+<p>用于获取网卡配置和网络状态信息</p>
+<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ifconfig <span class="string">[网卡设备]</span> <span class="string">[参数]</span></span><br><span class="line">RX 接收的数据</span><br><span class="line">TX 发送的数据</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>uname</p>
+<p>查看系统内核与系统发行版本号</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//完整的查看系统的 内核名称 主机名 内核发行版本 节点名 系统时间 硬件名称 硬件平台 处理器类型 操作系统名称</span></span><br><span class="line">uname -a</span><br><span class="line"></span><br><span class="line"><span class="comment">//如果要查看系统的版本信息</span></span><br><span class="line">cat /etc/redhat-release</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>uptime</p>
+<p>显示系统时间，已运行时间，启用终端数量，平均负载值等信息</p>
+</li>
+<li><p>free</p>
+<p>显示系统中内存的使用量信息</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">free</span> -h</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>who</p>
+<p>查看当前登入主机的用户终端信息</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">who</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>last</p>
+<p>查看所有系统的登陆记录，但该信息以日志形式保存的，已修改。</p>
+</li>
+<li><p>history</p>
+<p>用于查看执行过命令记录，可以自定义/etc/profile文件中的<strong>HISTSIZE</strong>变量值，设置保存记录条数。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">history</span> -c</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="文本编辑命令"><a href="#文本编辑命令" class="headerlink" title="文本编辑命令"></a>文本编辑命令</h2><ol>
+<li><p>more</p>
+<p>用于查看较大的文本文件</p>
+</li>
+<li><p>head</p>
+<p>-n N 指定查看文档的前N行</p>
+</li>
+<li><p>tail</p>
+<p>-n N指定查看文档的最后N行</p>
+</li>
+<li><p>tr</p>
+<p>用于替换文本文件中的字符</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">tr</span> <span class="selector-attr">[原始字符]</span> <span class="selector-attr">[目标字符]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//把某个文本的英文全部替换成大写</span></span><br><span class="line"><span class="selector-tag">cat</span> <span class="selector-tag">an</span><span class="selector-class">.c</span> | <span class="selector-tag">tr</span> <span class="selector-attr">[a-z]</span> <span class="selector-attr">[A-Z]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>wc</p>
+<p>用于统计制定文本的行数，字符数，字节数<br>-l     只显示行数<br>-w   只显示字符数<br>-c    只显示字节数</p>
+</li>
+<li><p>stat</p>
+<p>查看文件的具体存储信息和时间等信息</p>
+</li>
+<li><p>cut</p>
+<p>用于按<strong>列</strong>提取文本字符串</p>
+<p>-d      指定分隔符<br>-f      指定截取哪一列<br>—output=delimiter=<strong>mydeliniter</strong> 指定自己的分隔符</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cut [参数] 文本文件</span><br><span class="line"><span class="comment">//提取passwd文件的第一列字符串</span></span><br><span class="line">cut -<span class="string">d:</span> -f1 <span class="regexp">/etc/</span>passwd</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>diff</p>
+<p>用于比较多个文本文件的差异</p>
+<figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">diff [参数] 文件</span><br><span class="line">-<span class="ruby">-brief 来确认两个文件是否相同</span></span><br><span class="line"><span class="ruby">-c 详细比较多个文件的差异之处</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="打包压缩及搜索"><a href="#打包压缩及搜索" class="headerlink" title="打包压缩及搜索"></a>打包压缩及搜索</h2><h1 id="用户身份"><a href="#用户身份" class="headerlink" title="用户身份"></a>用户身份</h1><p>usermod ge</p>
+	  
+	</div>
+
+	<div>
+  	<center>
+	<div class="pagination">
+
+    
+    
+    <a type="button" class="btn btn-default disabled"><i class="fa fa-arrow-circle-o-left"></i>Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2018/04/15/install-oracle/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+    </center>
+	</div>
+	
+	<!-- comment -->
+	
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
+
+
+	</div> <!-- col-md-9/col-md-12 -->
+		
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2018-04-16 
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/基础命令/">基础命令<span>1</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
+	   <div id="toc" class="toc collapse in">
+		   <span class="toc-title">Contents</span>
+			<ol class="toc-article"><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#基础命令"><span class="toc-article-text">基础命令</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#系统工作命令"><span class="toc-article-text">系统工作命令</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#系统状态检测命令"><span class="toc-article-text">系统状态检测命令</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#文本编辑命令"><span class="toc-article-text">文本编辑命令</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#打包压缩及搜索"><span class="toc-article-text">打包压缩及搜索</span></a></li></ol></li><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#用户身份"><span class="toc-article-text">用户身份</span></a></li></ol>
+		</div>
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+	</div>
+		
+
+</div><!-- row -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  &copy; 2018 Mahdi
+  
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a>,<a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>,<a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a> and <a href="http://getbootstrap.com/" target="_blank">BOOTSTRA.386</a>. 
+     <br> Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind.386</a>.    
+</p>
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>⬆︎TOP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+   </html>
