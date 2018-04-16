@@ -282,7 +282,23 @@ var _hmt = _hmt || [];
 </div>
 <blockquote>
 <p>一块全新的硬盘需要先分区，再格式化才能挂载</p>
+<p>挂载是使用硬件设备的最后一步。</p>
 </blockquote>
+<ol>
+<li><p>mount </p>
+<blockquote>
+<p>用挂载文件系统，能够把硬盘设备或分区与一个目录文件进行关联，然后就能在该目录中对设备进行存取操作了。</p>
+</blockquote>
+<p>mount 文件系统    挂载目录</p>
+<p>-a    挂载所有在/etc/fstab中定义的文件系统</p>
+<p>-t    指定文件系统的类型（较新的Linux系统会自动进行判断，一般不需要此参数）</p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">//</span>挂载文件系统<span class="string">/dev/sdb2</span> 到目录<span class="string">/mnt</span></span><br><span class="line">mount <span class="string">/dev/sdb2</span> <span class="string">/mnt</span></span><br><span class="line"></span><br><span class="line"><span class="string">//</span>卸载文件系统<span class="string">/dev/sdb2</span></span><br><span class="line">umount <span class="string">/dev/sdb2</span></span><br></pre></td></tr></table></figure>
+<p>配置/etc/fstab文件，开机自动挂载文件系统设备。</p>
+<p>| 字段     | 意义                                                         |<br>| ———— | —————————————————————————————— |<br>| 设备文件 | 一般为设备的<strong>路径</strong>+<strong>设备名称</strong>，也可以写唯一识别码UUID    |<br>| 挂载目录 | 指定挂载到的目录，需要挂载前创建好                           |<br>| 格式类型 | 制定文件系统的格式，如ext3、ext4、xfs、swap、iso9660(此为光盘设备) |<br>| 权限选项 | 若设置defaults，则默认权限为：rw，suid，dev，exec，auto，nouser，async |<br>| 自检     | 如为1则开机后对磁盘进行自检，为0不自检                       |<br>| 优先级   | 若<strong>自检</strong>字段设为1则可对多块硬盘设置优先级，不设则为0       |</p>
+</li>
+</ol>
+<p>如配置本地镜像yum库对/etc/fstab文件进行配置，设置自动挂载镜像到/mnt</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># /etc/fstab</span></span><br><span class="line"><span class="comment"># Created by anaconda on Sun Apr 15 03:00:11 2018</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Accessible filesystems, by reference, are maintained under '/dev/disk'</span></span><br><span class="line"><span class="comment"># See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="attribute">UUID</span>=d9a3b33c-f81a-49b7-95c4-a51da5e1de7d /                       ext4    defaults        1 1</span><br><span class="line"><span class="attribute">UUID</span>=bc0b6f32-e219-4733-bfbf-b8292ef8c925 /boot                   ext4    defaults        1 2</span><br><span class="line"><span class="attribute">UUID</span>=36d4b408-b393-4158-a176-e40313558f1c swap                    swap    defaults        0 0</span><br><span class="line">tmpfs                   /dev/shm                tmpfs   defaults        0 0</span><br><span class="line">devpts                  /dev/pts                devpts  <span class="attribute">gid</span>=5,mode=620  0 0</span><br><span class="line">sysfs                   /sys                    sysfs   defaults        0 0</span><br><span class="line">proc                    /proc                   proc    defaults        0 0</span><br><span class="line">/dev/cdrom1			   /mnt					iso9660   defaults,loop   0 0</span><br></pre></td></tr></table></figure>
 <p>配置自动挂载</p>
 <p>/etc/fstab</p>
 <p>/dev/cdrom    /mnt    iso9660        defaults,loop        0 0</p>
