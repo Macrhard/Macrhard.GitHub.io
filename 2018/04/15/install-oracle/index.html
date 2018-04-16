@@ -139,8 +139,8 @@ var _hmt = _hmt || [];
 		 </div> <!-- alert -->
 	  		
 
-	  <a id="more"></a>
-<h1 id="Linux主机设置"><a href="#Linux主机设置" class="headerlink" title="Linux主机设置"></a>Linux主机设置</h1><h2 id="配置本地yum源"><a href="#配置本地yum源" class="headerlink" title="配置本地yum源"></a>配置本地yum源</h2><p>创建本地yum库</p>
+	  <h1 id="Linux主机设置"><a href="#Linux主机设置" class="headerlink" title="Linux主机设置"></a>Linux主机设置</h1><h2 id="配置本地yum源"><a href="#配置本地yum源" class="headerlink" title="配置本地yum源"></a>配置本地yum源</h2><a id="more"></a>
+<p>创建本地yum库</p>
 <p>vim /etc/yum.repos.d/yum.repo</p>
 <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[base]</span></span><br><span class="line"><span class="attr">name</span>=myyum</span><br><span class="line"><span class="attr">baseurl</span>=file:///mnt</span><br><span class="line"><span class="attr">enabled</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="number">0</span></span><br></pre></td></tr></table></figure>
 <p>挂载iso镜像</p>
