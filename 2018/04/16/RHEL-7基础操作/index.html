@@ -214,7 +214,19 @@ var _hmt = _hmt || [];
 <figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">diff [参数] 文件</span><br><span class="line">-<span class="ruby">-brief 来确认两个文件是否相同</span></span><br><span class="line"><span class="ruby">-c 详细比较多个文件的差异之处</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h2 id="打包压缩及搜索"><a href="#打包压缩及搜索" class="headerlink" title="打包压缩及搜索"></a>打包压缩及搜索</h2><h1 id="用户身份"><a href="#用户身份" class="headerlink" title="用户身份"></a>用户身份</h1><p>usermod ge</p>
+<h2 id="打包压缩及搜索"><a href="#打包压缩及搜索" class="headerlink" title="打包压缩及搜索"></a>打包压缩及搜索</h2><ol>
+<li><p>tar</p>
+<p>用打包/压缩或解压<br>-v         显示压缩或解压的过程<br>-f        file文件 输出结果到文件或设备 必须写且写在最后<br>-c         打包<br>-x         解包 把文件提取出来<br>-j        用gzip 压缩或解压  后缀 .gz<br>-z        用bzip 压缩或解压方式 后缀 .bz2<br>-t         查看压缩文件，不提取<br>-p      保留原始的权限与属性<br>-P     使用绝对路径来压缩<br>-C     指定解压到到目录</p>
+<p>不同的系统常用的打包压缩方式是不同的<br>• ｗｉｎｄｏｗｓ　常用rar<br>• ｍａｃ　常用　zip<br>• ｌｉｎｕｘ 常用 tar</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//常用打包压缩命令</span></span><br><span class="line">tar -czvf 压缩包名称<span class="selector-class">.tar</span><span class="selector-class">.gz</span> 要打包的目录</span><br><span class="line"><span class="comment">//如 将/etc目录通过gzip格式进行打包压缩，并把文件命名为etc.tar.gz</span></span><br><span class="line">tar -czvf etc<span class="selector-class">.tar</span><span class="selector-class">.gz</span> /etc</span><br><span class="line"></span><br><span class="line"><span class="comment">//常用解压缩命令</span></span><br><span class="line">tar -xzvf</span><br></pre></td></tr></table></figure>
+<p>​</p>
+<p>gzip<br>• tar与gzip命令结合可以实现文件的打包和压缩<br>• tar 只负责打包，gzip只负责压缩<br>• 用gzip压缩tar包后，其扩展名一般是xxx.tar.gz这是linux中最常见的压缩文件格式</p>
+<p>tar中有一个 -z　选项可以调用gzip，从而方便实现打包压缩和解压缩的功能</p>
+<p>tar -zcvf 打包文件.tar.gz 被压缩文件的路径　　压缩文件<br>tar -zxvf 打包文件.tar.gz  解压缩文件<br>​<br>tar -zxvf test.tar.gz -C /home/username/Desktop 解压缩到桌面</p>
+<p>​</p>
+</li>
+</ol>
+<h1 id="用户身份"><a href="#用户身份" class="headerlink" title="用户身份"></a>用户身份</h1><p>usermod ge</p>
 	  
 	</div>
 
