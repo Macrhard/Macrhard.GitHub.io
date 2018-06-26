@@ -138,11 +138,11 @@ var _hmt = _hmt || [];
 <div class="row">
 	<div class="col-md-8">
 		<h3 class="title">
-			<a href="/2018/04/16/RHEL-7基础操作/" >RHEL 7.2</a>
+			<a href="/2018/06/05/Linux-常见问题/" ></a>
 		</h3>
 		</div>
 	<div class="col-md-4">
-		<div class="date">post @ 2018-04-16  </div>
+		<div class="date">post @ 2018-06-05  </div>
 		</div>
 	</div>
 	
@@ -152,10 +152,121 @@ var _hmt = _hmt || [];
   <div class="row">
 	
 	
-		<h1 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h1><h2 id="系统工作命令"><a href="#系统工作命令" class="headerlink" title="系统工作命令"></a>系统工作命令</h2>
+		<ol>
+<li><p>新装Ubuntu不能使用root用户</p>
+<blockquote>
+<p>解决：初始化root密码，sudo passwd</p>
+</blockquote>
+</li>
+<li><p>重启网卡</p>
+<blockquote>
+<p>/etc/rc.d/init.d/network restart<br>或者<br>service network restart</p>
+<p>或者</p>
+<p>systemctl restart network （rhel 7以上的版本用此命令）</p>
+<p>关闭再重启网卡eth0<br>ifdown eth0<br>ifup eth0<br>ip addr show eth0</p>
+</blockquote>
+</li>
+</ol>
+<ol>
+<li><p>linux 再次获取 dhcp ip地址</p>
+<blockquote>
+<p>sudo dhclient -r //release ip 释放IP<br>sudo dhclient //获取IP</p>
+</blockquote>
+</li>
+<li><p>修改IP地址获取方式（静态、自动）</p>
+<blockquote>
+<p>ip配置文件在/etc/sysconfig/network-scripts/ifcfg-en0xxx</p>
+<p>dns配置文件/etc/resolv.conf</p>
+</blockquote>
+</li>
+</ol>
+<p>   networkmannerger</p>
+<p>   IPADDR=172.168.2.253<br>   NETMASK=255.255.255.0<br>   GATEWAY=172.168.2.1</p>
+
 	
 	</div>
-  <a type="button" href="/2018/04/16/RHEL-7基础操作/#more" class="btn btn-default more">Read More</a>
+  <a type="button" href="/2018/06/05/Linux-常见问题/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2018/05/09/nanconda-install-tensorflow/" >nanconda install tensorflow</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2018-05-09  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		
+	
+	</div>
+  <a type="button" href="/2018/05/09/nanconda-install-tensorflow/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2018/04/21/SQL/" title="数据库">SQL.</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2018-04-21  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		
+	
+	</div>
+  <a type="button" href="/2018/04/21/SQL/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2018/04/18/SVM/" >SVM</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2018-04-18  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		
+	
+	</div>
+  <a type="button" href="/2018/04/18/SVM/#more" class="btn btn-default more">Read More</a>
 </div>
 
 		
@@ -307,33 +418,6 @@ var _hmt = _hmt || [];
 <div class="row">
 	<div class="col-md-8">
 		<h3 class="title">
-			<a href="/2018/04/01/disk/" title="对磁盘的挂载分区等操作">磁盘操作</a>
-		</h3>
-		</div>
-	<div class="col-md-4">
-		<div class="date">post @ 2018-04-01  </div>
-		</div>
-	</div>
-	
-
-
-			<div class="entry">
-  <div class="row">
-	
-	
-		<p>1.先在磁盘上分区</p>
-	
-	</div>
-  <a type="button" href="/2018/04/01/disk/#more" class="btn btn-default more">Read More</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->
-<div class="row">
-	<div class="col-md-8">
-		<h3 class="title">
 			<a href="/2018/03/31/Git-使用方法/" title="记录常见git命令">Git 使用方法</a>
 		</h3>
 		</div>
@@ -352,61 +436,6 @@ var _hmt = _hmt || [];
 	
 	</div>
   <a type="button" href="/2018/03/31/Git-使用方法/#more" class="btn btn-default more">Read More</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->
-<div class="row">
-	<div class="col-md-8">
-		<h3 class="title">
-			<a href="/2018/03/31/RHCSA/" title="RHEL 7">RHCSA</a>
-		</h3>
-		</div>
-	<div class="col-md-4">
-		<div class="date">post @ 2018-03-31  </div>
-		</div>
-	</div>
-	
-
-
-			<div class="entry">
-  <div class="row">
-	
-	
-		<p><a href="http://www.runoob.com/linux/linux-command-manual.html" target="_blank" rel="noopener">参考连接</a></p>
-<h1 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h1><h3 id="ip"><a href="#ip" class="headerlink" title="ip"></a>ip</h3><figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//查看<span class="string">ip地</span>址</span><br><span class="line"><span class="string">ip </span><span class="string">addr</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">/</span>/查看适配器配置</span><br><span class="line"><span class="string">ifconfig</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">/</span>/<span class="string">DHCP获</span>取一个<span class="string">ip地</span>址</span><br><span class="line"><span class="string">dhclient</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">/</span>/更改主机名(重启生效)</span><br><span class="line"><span class="string">hostnamectl </span><span class="built_in">set-hostname</span> <span class="string">myhost</span></span><br></pre></td></tr></table></figure>
-	
-	</div>
-  <a type="button" href="/2018/03/31/RHCSA/#more" class="btn btn-default more">Read More</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->
-<div class="row">
-	<div class="col-md-8">
-		<h3 class="title">
-			<a href="/2018/03/29/测试目录/" >CCNA</a>
-		</h3>
-		</div>
-	<div class="col-md-4">
-		<div class="date">post @ 2018-03-29  </div>
-		</div>
-	</div>
-	
-
-
-			<div class="entry">
-  <div class="row">
-	
-	
-		<p>在不放弃分类编址的情况下把大的网络划分成若干个子网,从1985年起IP地址中又增加了一个“子网字段”使两级的IP地址变成了三级IP地址。使多个物理网络可以共用一个网络前缀。这种做法叫做子网划分，已成为正式标准协议。</p>
-	
-	</div>
-  <a type="button" href="/2018/03/29/测试目录/#more" class="btn btn-default more">Read More</a>
 </div>
 
 		
@@ -457,9 +486,7 @@ var _hmt = _hmt || [];
 		<h4>Categories</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/categories/Linux/">Linux<span>3</span></a></li>
-		
-			<li><a href="/categories/基础命令/">基础命令<span>1</span></a></li>
+			<li><a href="/categories/Linux/">Linux<span>2</span></a></li>
 		
 			<li><a href="/categories/技能/">技能<span>1</span></a></li>
 		
@@ -474,23 +501,25 @@ var _hmt = _hmt || [];
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/Linux/">Linux<span>3</span></a></li>
-		
-			<li><a href="/tags/正则表达式/">正则表达式<span>1</span></a></li>
+			<li><a href="/tags/算法/">算法<span>1</span></a></li>
 		
 			<li><a href="/tags/数据库-Oracle/">数据库 Oracle<span>1</span></a></li>
 		
+			<li><a href="/tags/Linux/">Linux<span>2</span></a></li>
+		
 			<li><a href="/tags/娱乐/">娱乐<span>1</span></a></li>
 		
-			<li><a href="/tags/随笔/">随笔<span>1</span></a></li>
-		
-			<li><a href="/tags/记录/">记录<span>1</span></a></li>
-		
-			<li><a href="/tags/算法/">算法<span>1</span></a></li>
+			<li><a href="/tags/正则表达式/">正则表达式<span>1</span></a></li>
 		
 			<li><a href="/tags/读书/">读书<span>1</span></a></li>
 		
+			<li><a href="/tags/SQL/">SQL<span>1</span></a></li>
+		
+			<li><a href="/tags/随笔/">随笔<span>1</span></a></li>
+		
 			<li><a href="/tags/Git/">Git<span>1</span></a></li>
+		
+			<li><a href="/tags/记录/">记录<span>1</span></a></li>
 		
 		 
 		</ul>
@@ -504,23 +533,23 @@ var _hmt = _hmt || [];
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2018/04/16/RHEL-7基础操作/" ><i class="fa fa-file-o"></i>RHEL 7.2</a>
+        <a href="/2018/06/05/Linux-常见问题/" ><i class="fa fa-file-o"></i></a>
+      </li>
+    
+      <li>
+        <a href="/2018/05/09/nanconda-install-tensorflow/" ><i class="fa fa-file-o"></i>nanconda install tensorflow</a>
+      </li>
+    
+      <li>
+        <a href="/2018/04/21/SQL/"  title="数据库" ><i class="fa fa-file-o"></i>SQL.</a>
+      </li>
+    
+      <li>
+        <a href="/2018/04/18/SVM/" ><i class="fa fa-file-o"></i>SVM</a>
       </li>
     
       <li>
         <a href="/2018/04/11/影片记录/"  title="记录一些看过的有趣电影" ><i class="fa fa-file-o"></i>影片记录</a>
-      </li>
-    
-      <li>
-        <a href="/2018/04/11/伯里克利：《在阵亡将士葬礼上的演说》/"  title="转载自豆瓣" ><i class="fa fa-file-o"></i>伯里克利：《在阵亡将士葬礼上的演说》</a>
-      </li>
-    
-      <li>
-        <a href="/2018/04/04/Ready-Player-One/"  title="读书太少，想法太多，随便写写而已" ><i class="fa fa-file-o"></i>Ready Player One</a>
-      </li>
-    
-      <li>
-        <a href="/2018/04/03/正则表达式/"  title="对正则表达是的简单总结" ><i class="fa fa-file-o"></i>正则表达式</a>
       </li>
     
   </ul>
@@ -594,22 +623,7 @@ var _hmt = _hmt || [];
 	 }
 	 var path = "/" + search_path;
      searchFunc(path, 'local-search-input', 'local-search-result');
-   </script>
+   </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
    </html>
